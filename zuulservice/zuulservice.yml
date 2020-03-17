@@ -1,16 +1,32 @@
-zuul.ignored-services: "*"
-zuul.prefix:  /api
-zuul.routes.organizationservice: /organization/**
-zuul.routes.licensingservice: /licensing/**
-zuul.routes.authenticationservice: /auth/**
-#zuul.routes.licensestatic.path: /licensestatic/**
-#zuul.routes.licensestatic.url:  http://licenseservice-static:8081
-#zuul.routes.licensestatic.serviceId: licensestatic
-#zuul.routes.licensestatic.ribbon.listOfServers: http://licenseservice-static1:8081, http://licenseservice-static2:8082
-#ribbon.eureka.enabled: false
+## USE CASE 1 (DEFAULT SETTINGS)
+## END USE CASE 1
+
+## USE CASE 2
+# zuul.routes.organizationservice: /organization/**
+## END USE CASE 2
+
+## USE CASE 3
+# zuul.routes.organizationservice: /organization/**
+# zuul.routes.assetsservice: /assets/**
+## END USE CASE 3
+
+## USE CASE 4
+# zuul.routes.organizationservice: /organization/**
+# zuul.ignored-services: "organizationservice"
+## END USE CASE 4
+
+## USE CASE 5
+# zuul.prefix:  /api
+# zuul.routes.organizationservice: /organization/**
+# zuul.routes.assetsservice: /assets/**
+# zuul.ignored-services: "*"
+## END USE CASE 5
+
+## USE CASE 6
+zuul.routes.assetstatic.url:  http://assetservice-static:8081
+## END USE CASE 6
+
 zuul.sensitiveHeaders: Cookie,Set-Cookie
 zuul.debug.request: true
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2500
-#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2
-#licensingservice.ribbon.ReadTimeout: 2
 signing.key: "345345fsdfsf5345"
