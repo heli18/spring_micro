@@ -16,10 +16,10 @@
 ## END USE CASE 4
 
 ## USE CASE 5
-# zuul.prefix:  /api
-# zuul.routes.organizationservice: /organization/**
-# zuul.routes.assetsservice: /assets/**
-# zuul.ignored-services: "*"
+zuul.prefix:  /api
+zuul.routes.organizationservice: /organization/**
+zuul.routes.assetsservice: /assets/**
+zuul.ignored-services: "*"
 ## END USE CASE 5
 
 ## USE CASE 6
